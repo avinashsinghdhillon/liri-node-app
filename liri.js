@@ -2,7 +2,9 @@ var dotenv = require("dotenv").config();
 var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var inquirer = require("inquirer");
-var spotify = new Spotify(keys.spotify);
+var OMDB = require("omdb");
+var spotifyKey = new Spotify(keys.spotify);
+var omdbKey =  keys.omdb.id;
 
 console.log("This is the process args: " + process.argv[2])
 
@@ -28,18 +30,21 @@ inquirer
         searchToCall(inquirerResponse.searchType, searchWords);
         console.log("Search type: " + inquirerResponse.searchType);
         console.log("Search term: " + inquirerResponse.searchWords);
+        console.log("Spotify key: " + keys.spotify.id);
+        console.log("OMDB Key: " + omdbKey);
     });
 
-    function searchToCall (searchTypeSelected){
+    //based on the search type this function calls the appropriate function/API and passes it the search terms.
+    function searchToCall (searchTypeSelected, searchTerm){
         switch (searchTypeSelected) {
             case "concert-this":
-                bandsInTownApi();
+                bandsInTownApi(searchTerm);
                 break;
             case "spotify-this-song": 
-                spotifyNodeApi();
+                spotifyNodeApi(searchTerm);
                 break;
             case "movie-this":
-                omdbApi();
+                omdbApi(searchTerm);
                 break;
             case "do-what-it-says":
                 randomApi();
@@ -48,18 +53,18 @@ inquirer
         }
     }
 
-// concert-this
-function bandsInTownApi(){
+// concert-this (use Axios)
+function bandsInTownApi(searchBand){
 
 }
 
 // spotify-this-song :default "The Sign" by Ace of Base if no song provided
-function spotifyNodeApi(){
+function spotifyNodeApi(searchSong){
 
 }
 
-// movie-this
-function omdbApi(){
+// movie-this (use Axios)
+function omdbApi(searchMovie){
 
 }
 
