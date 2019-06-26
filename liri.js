@@ -5,10 +5,8 @@ var inquirer = require("inquirer");
 var axios = require("axios");
 var OMDB = require("omdb");
 var moment = require("moment")
-var spotifyKey = new Spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify);
 var omdbKey =  keys.omdb.id;
-
-console.log("This is the process args: " + process.argv[2])
 
 inquirer
     .prompt([
@@ -23,7 +21,7 @@ inquirer
         //promt the user to enter their search words
         {
             type: "input",
-            message: "Enter your search words and hit the 'Enter' key:",
+            message: "Enter your search words and press 'Enter':",
             name: "searchWords"
         }
     ])
@@ -35,8 +33,6 @@ inquirer
         console.log("Spotify key: " + keys.spotify.id);
         console.log("OMDB Key: " + omdbKey);
     });
-
-//searchToCall("concert-this", "jonas brothers");/////////////////////////////////////////
 
     //based on the search type this function calls the appropriate function/API and passes it the search terms.
     function searchToCall (searchTypeSelected, searchTerm){
@@ -66,7 +62,6 @@ function bandsInTownApi(searchBand){
         function(response) {
             console.log(response.data[0]);
             console.log(response.data.length);
-            debugger;
             if(response.data.length > 0){
                 for(let i = 0; i < response.data.length; i++){
                     console.log("--------------------------------");
@@ -102,7 +97,28 @@ function bandsInTownApi(searchBand){
 
 // spotify-this-song :default "The Sign" by Ace of Base if no song provided
 function spotifyNodeApi(searchSong){
-
+    if(searchSong === ""){
+        searchSong = "The Sign";
+    }
+    spotify.search({ type: 'track', query: searchSong , order: "popularity"}, function(err, data) {
+        if (err) {
+          return console.log('Error occurred: ' + err);
+        }
+       
+        if(data.tracks.items.length > 0){
+          for (var i = 0; i < data.tracks.items.length; i++){
+            debugger;
+            console.log("--------------------------------");
+            console.log("Artist: " + data.tracks.items[i].artists[0].name);
+            console.log("Song's Name: " + data.tracks.items[i].name);
+            console.log("Preview: " + data.tracks.items[i].external_urls.spotify);
+            console.log("Album: " + data.tracks.items[i].album.name);
+            console.log("Popularity: " + data.tracks.items[i].popularity);
+            console.log("--------------------------------");
+          }
+          console.log(data.tracks.items.length + " songs matched your search.");
+        }
+      });
 }
 
 // movie-this (use Axios)
