@@ -15,7 +15,32 @@ The app can seach and display results for songs/tracks, movies and artists/event
 
 ### Images
 
-![App Start](images/App Start.PNG)
-![movie-this option selected](images/movie-this_option_selected.PNG)
-![movie-this search term entered](images/movie-this_search_term_entered.PNG)
-![movie-this search result](images\movie-this_search_result.PNG)
+![App Start]
+(images/App Start.PNG)
+
+![movie-this option selected]
+(images/movie-this_option_selected.PNG)
+
+![movie-this search term entered]
+(images/movie-this_search_term_entered.PNG)
+
+![movie-this search result]
+(images/movie-this_search_result.PNG)
+
+### GitHub Link
+https://github.com/avinashsinghdhillon/liri-node-app
+
+### Technologies Used:
+* Node.js
+* NPM: Node Package Manager
+* NPM Packages
+  * node-spotify-api
+  * inquirer
+  * axios
+  * OMDB
+  * moment
+  * fs
+*GitHub
+
+### Developer
+This app was developed by Avinash Singh as part of the Web Development coursework at UT Austin.
