@@ -15,18 +15,16 @@ The app can seach and display results for songs/tracks, movies and artists/event
 
 ### Images
 
-![App Start]
-(https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/App%20Start.PNG)
+ #### "Movie-This" Search in stages
+  (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/App%20Start.PNG)
 
-![movie-this option selected]
-(https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/movie-this_option_selected.PNG)
+  (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/movie-this_option_selected.PNG)
 
-![movie-this search term entered]
-(https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/movie-this_search_term_entered.PNG)
+  (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/movie-this_search_term_entered.PNG)
 
-![movie-this search result]
-(https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/movie-this_search_result.PNG)
+  (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/movie-this_search_result.PNG)
 
+#### Other Searchs with Results
 (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/spotify-this-song_search.PNG)
 
 (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/concert-this_search.PNG)
