@@ -44,7 +44,7 @@ https://github.com/avinashsinghdhillon/liri-node-app
   * OMDB
   * moment
   * fs
-*GitHub
+  *GitHub
 
 ### Developer
 This app was developed by Avinash Singh as part of the Web Development coursework at UT Austin.
