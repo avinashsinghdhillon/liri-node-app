@@ -1,7 +1,7 @@
 # LIRI Bot
 
 ### Problem
-This app accepts user input to choose out off 1 of the 4 search types it can perform and also allows the user to input the search terms.
+This app accepts user input to choose off of 1 of the 4 search types it can perform and also allows the user to input the search terms.
 
 ### Brief Description
 The app can seach and display results for songs/tracks, movies and artists/events. Depending on the user selection and search term the result/s are displayed on the terminal window.
@@ -24,7 +24,7 @@ The app can seach and display results for songs/tracks, movies and artists/event
 
   (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/movie-this_search_result.PNG)
 
-#### Other Searchs with Results
+#### Other Searches with Results
 (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/spotify-this-song_search.PNG)
 
 (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/concert-this_search.PNG)
