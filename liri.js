@@ -1,10 +1,12 @@
-var dotenv = require("dotenv").config();
-var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var inquirer = require("inquirer");
 var axios = require("axios");
 var OMDB = require("omdb");
 var moment = require("moment")
+var fs = require("fs");
+//the API keys for Spotify and OMDB are retrieved from the .env file
+var dotenv = require("dotenv").config();
+var keys = require("./keys.js");
 var spotify = new Spotify(keys.spotify);
 var omdbKey =  keys.omdb.id;
 
@@ -21,17 +23,13 @@ inquirer
         //promt the user to enter their search words
         {
             type: "input",
-            message: "Enter your search words and press 'Enter':",
+            message: "Enter search words (leave blank for 'do-what-it-says'):",
             name: "searchWords"
         }
     ])
     .then(function(inquirerResponse){
         var searchWords = inquirerResponse.searchWords.split(" ").join(" ");
         searchToCall(inquirerResponse.searchType, searchWords);
-        console.log("Search type: " + inquirerResponse.searchType);
-        console.log("Search term: " + inquirerResponse.searchWords);
-        console.log("Spotify key: " + keys.spotify.id);
-        console.log("OMDB Key: " + omdbKey);
     });
 
     //based on the search type this function calls the appropriate function/API and passes it the search terms.
@@ -163,5 +161,17 @@ function omdbApi(searchMovie){
 
 // do-what-it-says : spotify-this-song for "I Want it That Way," USE THE "FS" NODE PACKAGE on random.txt
 function randomApi(){
+    fs.readFile("random.txt", "utf8", function(error, data) {
+    
+      if (error) {
+        return console.log(error);
+      }
+      //create an array out of the text in the random.txt file
+      var dataArr = data.split(",");
 
+      if(dataArr.length > 0){
+        searchToCall(dataArr[0], dataArr[1]);
+      }
+    
+    });
 }
