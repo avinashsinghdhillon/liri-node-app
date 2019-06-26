@@ -58,8 +58,6 @@ function bandsInTownApi(searchBand){
     }
     axios.get("https://rest.bandsintown.com/artists/" + searchBand + "/events?app_id=codingbootcamp").then(
         function(response) {
-            console.log(response.data[0]);
-            console.log(response.data.length);
             if(response.data.length > 0){
                 for(let i = 0; i < response.data.length; i++){
                     console.log("--------------------------------");
@@ -105,7 +103,6 @@ function spotifyNodeApi(searchSong){
        
         if(data.tracks.items.length > 0){
           for (var i = 0; i < data.tracks.items.length; i++){
-            debugger;
             console.log("--------------------------------");
             console.log("Artist: " + data.tracks.items[i].artists[0].name);
             console.log("Song's Name: " + data.tracks.items[i].name);

@@ -27,6 +27,12 @@ The app can seach and display results for songs/tracks, movies and artists/event
 ![movie-this search result]
 (https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/movie-this_search_result.PNG)
 
+(https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/spotify-this-song_search.PNG)
+
+(https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/concert-this_search.PNG)
+
+(https://github.com/avinashsinghdhillon/liri-node-app/blob/master/images/do-what-it-says_result.PNG)
+
 ### GitHub Link
 https://github.com/avinashsinghdhillon/liri-node-app
 
