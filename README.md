@@ -1,10 +1,10 @@
 # LIRI Bot
 
-### Problem
-This app accepts user input to choose off of 1 of the 4 search types it can perform and also allows the user to input the search terms.
-
 ### Brief Description
 The app can seach and display results for songs/tracks, movies and artists/events. Depending on the user selection and search term the result/s are displayed on the terminal window.
+
+### Problem
+This app accepts user input to choose 1 of the 4 search types it can perform and also allows the user to input the search terms.
 
 ### Instructions to Use
 * Start the app by navigating to it's location folder and typing "node liri.js".
